@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Mithra Consulting</title>
+<link rel="icon" type="image/jpeg" href="../images/Mithra-Logo-Final-4.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8FAFC;--bg2:#FFFFFF;--bg3:#EEF2F9;
+  --navy:#0C1A3A;--navy2:#1a2f5c;
+  --azure:#1D4ED8;--azure2:#2563EB;--azure3:#3B82F6;
+  --sky:#0EA5E9;--sky-pale:#F0F9FF;
+  --border:#DDE5F0;--muted:#5A6A85;--text:#1C2B4A;
+  --green:#16A34A;--green-pale:#F0FDF4;
+  --radius:12px;--radius-lg:20px;
+  --shadow:0 1px 3px rgba(12,26,58,.08),0 4px 16px rgba(12,26,58,.06);
+  --shadow-md:0 4px 12px rgba(12,26,58,.1),0 12px 40px rgba(12,26,58,.08);
+  --shadow-lg:0 8px 24px rgba(12,26,58,.12),0 24px 64px rgba(12,26,58,.1);
+  --transition:all .25s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.15;letter-spacing:-.02em}
+.mono{font-family:'DM Mono',monospace}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid transparent;transition:var(--transition)}
+.nav.scrolled{border-color:var(--border);box-shadow:0 2px 16px rgba(12,26,58,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:.925rem;font-weight:500;color:var(--muted);padding:8px 14px;border-radius:8px;transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--bg3)}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:6px;cursor:pointer}
+.nav-dropdown>a::after{content:'';display:block;width:10px;height:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235A6A85' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
+.nav-dropdown:hover>a::after{transform:rotate(180deg)}
+.dropdown-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:16px;width:520px;display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s,transform .2s;transform:translateX(-50%) translateY(-4px);pointer-events:none}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dp-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;transition:var(--transition);color:var(--text)}
+.dp-item:hover{background:var(--bg3)}
+.dp-icon{width:36px;height:36px;background:var(--sky-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.dp-text strong{display:block;font-size:.85rem;font-weight:600;color:var(--navy)}
+.dp-text span{font-size:.78rem;color:var(--muted)}
+.nav-cta{background:var(--azure);color:#fff!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important}
+.nav-cta:hover{background:var(--azure2)!important;color:#fff!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px}
+.mobile-menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px 24px;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:10px 0;color:var(--text);font-weight:500;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-submenu{padding-left:16px}
+.mobile-submenu a{font-size:.9rem;color:var(--muted)}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:72px 0 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
+.breadcrumb{font-family:'DM Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.06em;margin-bottom:20px;display:flex;align-items:center;gap:8px;position:relative}
+.breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s}
+.breadcrumb a:hover{color:#fff}
+.breadcrumb span{color:rgba(255,255,255,.25)}
+.page-hero h1{font-size:clamp(2rem,4vw,3rem);color:#fff;margin-bottom:16px;position:relative}
+.page-hero h1 em{font-style:italic;font-weight:300;color:var(--azure3)}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.05rem;max-width:560px;position:relative}
+
+/* CONTACT SECTION */
+.contact-section{padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.contact-info-block{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.ci-icon{width:48px;height:48px;background:var(--sky-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ci-text strong{display:block;font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:4px}
+.ci-text span,.ci-text a{font-size:.9rem;color:var(--muted);display:block;line-height:1.6}
+.ci-text a:hover{color:var(--azure2)}
+.response-box{background:var(--green-pale);border:1px solid rgba(22,163,74,.2);border-radius:var(--radius);padding:20px 24px;margin-top:8px}
+.response-box .rb-label{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.response-box ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.response-box li{font-size:.875rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.response-box li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* FORM */
+.form-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-md)}
+.form-card h2{font-size:1.5rem;color:var(--navy);margin-bottom:8px}
+.form-card .sub{font-size:.9rem;color:var(--muted);margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:'Inter',sans-serif;color:var(--text);background:#fff;transition:var(--transition);outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--azure2);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.form-group textarea{min-height:130px;resize:vertical}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A85' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px}
+.btn-submit{width:100%;padding:14px;background:var(--azure2);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:hover{background:var(--azure);transform:translateY(-1px);box-shadow:0 8px 24px rgba(29,78,216,.3)}
+.form-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:12px}
+
+/* METRICS */
+.metrics-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.metric-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;transition:var(--transition)}
+.metric-card:hover{border-color:var(--azure3);box-shadow:var(--shadow)}
+.metric-card .num{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--navy)}
+.metric-card .label{font-size:.875rem;color:var(--muted);margin-top:4px}
+.metric-card .icon{font-size:28px;margin-bottom:12px}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand .logo-pill{background:#fff;border-radius:10px;display:inline-block;padding:8px 14px;margin-bottom:16px}
+.footer-brand .logo-pill img{height:36px;width:auto}
+.footer-brand p{font-size:.875rem;line-height:1.75;max-width:280px;color:rgba(255,255,255,.55)}
+.footer-col h4{font-family:'Fraunces',serif;font-size:1rem;color:#fff;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul a{font-size:.875rem;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-col ul a:hover{color:#fff}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.35)}
+.footer-bottom .mono{font-size:.72rem;color:rgba(255,255,255,.25);letter-spacing:.06em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+
+@media(max-width:1024px){
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+  .metrics-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="../images/Mithra-consulting.png" alt="Mithra Consulting"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav-dropdown">
+          <a href="index.html#services">Services</a>
+          <div class="dropdown-panel">
+            <a href="services/audit.html" class="dp-item"><div class="dp-icon">🔍</div><div class="dp-text"><strong>Audit &amp; Compliance</strong><span>ISO, SOC 2, HIPAA, PCI-DSS</span></div></a>
+            <a href="services/vapt.html" class="dp-item"><div class="dp-icon">🛡️</div><div class="dp-text"><strong>VAPT</strong><span>Web, Network, Mobile, AI</span></div></a>
+            <a href="services/cloud.html" class="dp-item"><div class="dp-icon">☁️</div><div class="dp-text"><strong>Cloud Services</strong><span>CSPM, DR, Backup</span></div></a>
+            <a href="services/soc.html" class="dp-item"><div class="dp-icon">📡</div><div class="dp-text"><strong>SOC Monitoring</strong><span>24×7 Detection &amp; Response</span></div></a>
+            <a href="services/it.html" class="dp-item"><div class="dp-icon">💻</div><div class="dp-text"><strong>IT Solutions</strong><span>Endpoint &amp; Email Security</span></div></a>
+            <a href="services/managed.html" class="dp-item"><div class="dp-icon">⚙️</div><div class="dp-text"><strong>Managed Services</strong><span>Azure, AWS, GCP</span></div></a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <div class="mobile-submenu">
+      <a href="services/audit.html">Audit &amp; Compliance</a>
+      <a href="services/vapt.html">VAPT</a>
+      <a href="services/cloud.html">Cloud Services</a>
+      <a href="services/soc.html">SOC Monitoring</a>
+      <a href="services/it.html">IT Solutions</a>
+      <a href="services/managed.html">Managed Services</a>
+    </div>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.7)">Contact</span>
+    </div>
+    <h1>Get In <em>Touch</em></h1>
+    <p>Ready to discuss your security needs? Our experts are available to help you build a stronger, more resilient security posture — starting today.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT: Info -->
+      <div>
+        <div class="contact-info-block">
+          <div class="contact-item reveal">
+            <div class="ci-icon">📍</div>
+            <div class="ci-text">
+              <strong>Our Office</strong>
+              <span>Mithra Consulting Private Limited</span>
+              <span>Bangalore, Karnataka, India</span>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-1">
+            <div class="ci-icon">✉️</div>
+            <div class="ci-text">
+              <strong>Email Us</strong>
+              <a href="mailto:info@mithraconsulting.com">info@mithraconsulting.com</a>
+              <a href="mailto:security@mithraconsulting.com">security@mithraconsulting.com</a>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-2">
+            <div class="ci-icon">📞</div>
+            <div class="ci-text">
+              <strong>Call Us</strong>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+              <span>Mon–Fri, 9 AM – 7 PM IST</span>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <div class="ci-icon">🔒</div>
+            <div class="ci-text">
+              <strong>Security Incidents</strong>
+              <a href="mailto:incident@mithraconsulting.com">incident@mithraconsulting.com</a>
+              <span>24×7 for active incidents</span>
+            </div>
+          </div>
+        </div>
+        <div class="response-box reveal" style="margin-top:32px">
+          <div class="rb-label">Our Response Commitments</div>
+          <ul>
+            <li>General enquiries responded within 4 business hours</li>
+            <li>Security incident triage within 1 hour (24×7)</li>
+            <li>Proposal turnaround within 2 business days</li>
+            <li>All communications encrypted and confidential</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="reveal reveal-delay-1">
+        <div class="form-card">
+          <h2>Send Us a Message</h2>
+          <p class="sub">Tell us about your needs and we'll connect you with the right expert.</p>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name *</label>
+              <input type="text" id="company" name="company" placeholder="Your Company Pvt Ltd" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interest *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service area</option>
+                <option>Audit &amp; Compliance</option>
+                <option>VAPT (Penetration Testing)</option>
+                <option>Cloud Security Services</option>
+                <option>SOC Monitoring</option>
+                <option>IT Solutions</option>
+                <option>Managed Security Services</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">How Can We Help? *</label>
+              <textarea id="message" name="message" placeholder="Please describe your security challenge or what you'd like to achieve..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span>Send Message</span><span>→</span>
+            </button>
+            <p class="form-note">🔒 Your information is protected and never shared with third parties.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- METRICS ROW -->
+    <div class="metrics-row">
+      <div class="metric-card reveal">
+        <div class="icon">⚡</div>
+        <div class="num">&lt;4 hrs</div>
+        <div class="label">Average Initial Response Time</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-1">
+        <div class="icon">🌍</div>
+        <div class="num">15+</div>
+        <div class="label">Countries Served Globally</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-2">
+        <div class="icon">🏆</div>
+        <div class="num">98%</div>
+        <div class="label">Client Satisfaction Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-pill"><img src="../images/Mithra-consulting.png" alt="Mithra Consulting"></div>
+        <p>Trusted cybersecurity and compliance partner for businesses navigating an increasingly complex digital landscape.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/audit.html">Audit &amp; Compliance</a></li>
+          <li><a href="services/vapt.html">VAPT</a></li>
+          <li><a href="services/cloud.html">Cloud Services</a></li>
+          <li><a href="services/soc.html">SOC Monitoring</a></li>
+          <li><a href="services/it.html">IT Solutions</a></li>
+          <li><a href="services/managed.html">Managed Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="services/audit.html">ISO 27001</a></li>
+          <li><a href="services/audit.html">SOC 2</a></li>
+          <li><a href="services/audit.html">PCI-DSS</a></li>
+          <li><a href="services/audit.html">GDPR</a></li>
+          <li><a href="services/audit.html">DPDPA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mithra Consulting. All rights reserved.</p>
+      <span class="mono">SECURING DIGITAL FUTURES</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.innerHTML = '<span>✓ Message Sent!</span>';
+  btn.style.background = '#16A34A';
+  setTimeout(() => {
+    btn.innerHTML = '<span>Send Message</span><span>→</span>';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

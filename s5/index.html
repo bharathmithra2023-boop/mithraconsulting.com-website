@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mithra Consulting — Trusted Cybersecurity & Compliance Partner</title>
+<link rel="icon" type="image/jpeg" href="../images/Mithra-Logo-Final-4.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8FAFC;--bg2:#FFFFFF;--bg3:#EEF2F9;
+  --navy:#0C1A3A;--navy2:#1a2f5c;
+  --azure:#1D4ED8;--azure2:#2563EB;--azure3:#3B82F6;
+  --sky:#0EA5E9;--sky-pale:#F0F9FF;
+  --border:#DDE5F0;--muted:#5A6A85;--text:#1C2B4A;
+  --green:#16A34A;--green-pale:#F0FDF4;
+  --radius:12px;--radius-lg:20px;
+  --shadow:0 1px 3px rgba(12,26,58,.08),0 4px 16px rgba(12,26,58,.06);
+  --shadow-md:0 4px 12px rgba(12,26,58,.1),0 12px 40px rgba(12,26,58,.08);
+  --shadow-lg:0 8px 24px rgba(12,26,58,.12),0 24px 64px rgba(12,26,58,.1);
+  --transition:all .25s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.15;letter-spacing:-.02em}
+.mono{font-family:'DM Mono',monospace}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.container-wide{max-width:1400px;margin:0 auto;padding:0 24px}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid transparent;transition:var(--transition)}
+.nav.scrolled{border-color:var(--border);box-shadow:0 2px 16px rgba(12,26,58,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:.925rem;font-weight:500;color:var(--muted);padding:8px 14px;border-radius:8px;transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--bg3)}
+.nav-links a.active{font-weight:600}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:6px;cursor:pointer}
+.nav-dropdown>a::after{content:'';display:block;width:10px;height:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235A6A85' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
+.nav-dropdown:hover>a::after{transform:rotate(180deg)}
+.dropdown-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:16px;width:520px;display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s,transform .2s;transform:translateX(-50%) translateY(-4px);pointer-events:none}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dp-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;transition:var(--transition);color:var(--text)}
+.dp-item:hover{background:var(--bg3)}
+.dp-icon{width:36px;height:36px;background:var(--sky-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.dp-text strong{display:block;font-size:.85rem;font-weight:600;color:var(--navy)}
+.dp-text span{font-size:.78rem;color:var(--muted)}
+.nav-cta{background:var(--azure);color:#fff!important;padding:9px 20px!important;border-radius:8px!important;font-weight:600!important}
+.nav-cta:hover{background:var(--azure2)!important;color:#fff!important;background-color:var(--azure2)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--transition)}
+.mobile-menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px 24px;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:10px 0;color:var(--text);font-weight:500;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-submenu{padding-left:16px}
+.mobile-submenu a{font-size:.9rem;color:var(--muted)}
+
+/* ─── HERO ───────────────────────────────────────────── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;min-height:100svh}
+.hero-left{background:var(--navy);position:relative;display:flex;align-items:center;padding:80px 64px 80px 60px;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(29,78,216,.25) 0%,transparent 70%);top:-100px;right:-200px;pointer-events:none}
+.hero-left-inner{position:relative;z-index:1;max-width:520px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 14px 6px 8px;margin-bottom:28px}
+.badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 0 3px rgba(22,163,74,.25)}
+.badge-dot.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(22,163,74,.25)}50%{box-shadow:0 0 0 6px rgba(22,163,74,.1)}}
+.hero-badge span{font-family:'DM Mono',monospace;font-size:.78rem;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase}
+.hero-h1{font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:#fff;margin-bottom:24px;line-height:1.1}
+.hero-h1 em{font-style:italic;color:var(--azure3);font-weight:300}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:36px;max-width:440px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:.95rem;font-weight:600;transition:var(--transition);cursor:pointer;border:none;text-decoration:none}
+.btn-primary{background:var(--azure2);color:#fff}
+.btn-primary:hover{background:var(--azure);transform:translateY(-1px);box-shadow:0 8px 24px rgba(29,78,216,.35)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-family:'DM Mono',monospace;font-size:.72rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);padding:5px 12px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover}
+.hero-stats-card{position:absolute;bottom:40px;left:-20px;background:#fff;border-radius:var(--radius-lg);padding:24px 28px;box-shadow:var(--shadow-lg);min-width:280px}
+.stats-card-title{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-item .num{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-item .lbl{font-size:.75rem;color:var(--muted);margin-top:3px}
+
+/* ─── ABOUT ──────────────────────────────────────────── */
+.section{padding:100px 0}
+.section-alt{background:var(--bg3)}
+.section-label{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--azure2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:block}
+.section-h2{font-size:clamp(1.9rem,3vw,2.7rem);font-weight:700;color:var(--navy);margin-bottom:20px}
+.section-h2 em{font-style:italic;font-weight:300;color:var(--azure)}
+.section-lead{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:620px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.two-col.reverse{direction:rtl}
+.two-col.reverse>*{direction:ltr}
+.about-text p{color:var(--muted);line-height:1.8;margin-bottom:16px}
+.about-text p:last-child{margin-bottom:0}
+.stats-4{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin:32px 0}
+.stat-box{background:#fff;padding:20px;text-align:center}
+.stat-box .n{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:var(--navy)}
+.stat-box .l{font-size:.8rem;color:var(--muted);margin-top:2px}
+.cert-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.cert-badge{font-family:'DM Mono',monospace;font-size:.72rem;background:var(--bg3);border:1px solid var(--border);color:var(--navy2);padding:6px 14px;border-radius:100px;font-weight:500}
+.about-img-wrap{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.about-img-wrap img{width:100%;height:520px;object-fit:cover}
+.iso-badge{position:absolute;top:24px;right:24px;background:#fff;border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:10px}
+.iso-badge .icon{width:36px;height:36px;background:var(--sky-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.iso-badge strong{font-size:.85rem;color:var(--navy);display:block}
+.iso-badge span{font-size:.72rem;color:var(--green);font-weight:600}
+
+/* ─── TRUST BAND ─────────────────────────────────────── */
+.trust-band{background:var(--navy);padding:52px 0}
+.trust-band-label{font-family:'DM Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:28px}
+.trust-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.trust-pill{font-family:'DM Mono',monospace;font-size:.78rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:100px;letter-spacing:.04em}
+
+/* ─── SERVICES GRID ──────────────────────────────────── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.svc-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:var(--transition);position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--sky-pale) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.svc-card:hover{border-color:var(--azure3);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.svc-card:hover::before{opacity:1}
+.svc-icon{width:52px;height:52px;background:var(--sky-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;position:relative;z-index:1}
+.svc-card h3{font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:10px;position:relative;z-index:1}
+.svc-card p{font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:20px;position:relative;z-index:1}
+.svc-link{font-size:.85rem;font-weight:600;color:var(--azure2);display:inline-flex;align-items:center;gap:6px;transition:var(--transition);position:relative;z-index:1}
+.svc-link:hover{gap:10px;color:var(--azure)}
+
+/* ─── WHY CHOOSE US ──────────────────────────────────── */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.why-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:var(--transition)}
+.why-card:hover{border-color:var(--azure3);box-shadow:var(--shadow)}
+.why-icon{font-size:28px;margin-bottom:16px}
+.why-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+.why-card p{font-size:.875rem;color:var(--muted);line-height:1.65}
+
+/* ─── CTA SECTION ────────────────────────────────────── */
+.cta-section{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.cta-section h2{font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin-bottom:16px;position:relative}
+.cta-section p{color:rgba(255,255,255,.65);font-size:1.05rem;margin-bottom:36px;position:relative}
+.btn-white{background:#fff;color:var(--navy);font-weight:700}
+.btn-white:hover{background:var(--bg3);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand .logo-pill{background:#fff;border-radius:10px;display:inline-block;padding:8px 14px;margin-bottom:16px}
+.footer-brand .logo-pill img{height:36px;width:auto}
+.footer-brand p{font-size:.875rem;line-height:1.75;max-width:280px;color:rgba(255,255,255,.55)}
+.footer-col h4{font-family:'Fraunces',serif;font-size:1rem;color:#fff;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul a{font-size:.875rem;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-col ul a:hover{color:#fff}
+.footer-bottom{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.35)}
+.footer-bottom .mono{font-size:.72rem;color:rgba(255,255,255,.25);letter-spacing:.06em}
+
+/* ─── SCROLL REVEAL ──────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{height:420px}
+  .hero-left{padding:72px 40px}
+  .two-col{grid-template-columns:1fr;gap:48px}
+  .two-col.reverse{direction:ltr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-left{padding:60px 24px}
+  .hero-stats-card{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .section{padding:64px 0}
+  .stats-4{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .trust-pills{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="../images/Mithra-consulting.png" alt="Mithra Consulting"></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="nav-dropdown">
+          <a href="#services">Services</a>
+          <div class="dropdown-panel">
+            <a href="services/audit.html" class="dp-item">
+              <div class="dp-icon">🔍</div>
+              <div class="dp-text"><strong>Audit &amp; Compliance</strong><span>ISO, SOC 2, HIPAA, PCI-DSS</span></div>
+            </a>
+            <a href="services/vapt.html" class="dp-item">
+              <div class="dp-icon">🛡️</div>
+              <div class="dp-text"><strong>VAPT</strong><span>Web, Network, Mobile, AI</span></div>
+            </a>
+            <a href="services/cloud.html" class="dp-item">
+              <div class="dp-icon">☁️</div>
+              <div class="dp-text"><strong>Cloud Services</strong><span>CSPM, DR, Backup</span></div>
+            </a>
+            <a href="services/soc.html" class="dp-item">
+              <div class="dp-icon">📡</div>
+              <div class="dp-text"><strong>SOC Monitoring</strong><span>24×7 Detection &amp; Response</span></div>
+            </a>
+            <a href="services/it.html" class="dp-item">
+              <div class="dp-icon">💻</div>
+              <div class="dp-text"><strong>IT Solutions</strong><span>Endpoint &amp; Email Security</span></div>
+            </a>
+            <a href="services/managed.html" class="dp-item">
+              <div class="dp-icon">⚙️</div>
+              <div class="dp-text"><strong>Managed Services</strong><span>Azure, AWS, GCP</span></div>
+            </a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <div class="mobile-submenu">
+      <a href="services/audit.html">Audit &amp; Compliance</a>
+      <a href="services/vapt.html">VAPT</a>
+      <a href="services/cloud.html">Cloud Services</a>
+      <a href="services/soc.html">SOC Monitoring</a>
+      <a href="services/it.html">IT Solutions</a>
+      <a href="services/managed.html">Managed Services</a>
+    </div>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-dots"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-left-inner">
+      <div class="hero-badge">
+        <div class="badge-dot pulse"></div>
+        <span>Trusted Security Partner</span>
+      </div>
+      <h1 class="hero-h1">Securing Your<br><em>Digital Future</em><br>Together</h1>
+      <p class="hero-sub">Enterprise-grade cybersecurity, compliance advisory, and managed security services — delivered with precision, depth, and accountability.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary">Get a Free Assessment →</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-pills">
+        <span class="pill">ISO 27001</span>
+        <span class="pill">SOC 2</span>
+        <span class="pill">PCI-DSS</span>
+        <span class="pill">HIPAA</span>
+        <span class="pill">GDPR</span>
+        <span class="pill">DPDPA</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Modern office environment">
+    <div class="hero-stats-card">
+      <div class="stats-card-title">Our Track Record</div>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="num">500+</div><div class="lbl">Assessments Done</div></div>
+        <div class="stat-item"><div class="num">98%</div><div class="lbl">Client Retention</div></div>
+        <div class="stat-item"><div class="num">7+</div><div class="lbl">Frameworks Covered</div></div>
+        <div class="stat-item"><div class="num">24×7</div><div class="lbl">SOC Monitoring</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-h2">Your Strategic <em>Security</em> Advisor</h2>
+        <div class="about-text">
+          <p>Mithra Consulting is a specialist cybersecurity firm dedicated to helping organisations build resilient, compliant, and secure digital environments. Founded on the belief that security should be an enabler — not a blocker — we partner with businesses across every stage of their security journey.</p>
+          <p>From startups seeking their first compliance certification to enterprises managing complex multi-cloud environments, our team brings hands-on expertise, regulatory depth, and a genuine commitment to long-term partnership.</p>
+          <p>We don't just deliver reports — we work alongside your team to understand context, reduce risk, and build capability that lasts.</p>
+        </div>
+        <div class="stats-4">
+          <div class="stat-box"><div class="n">500+</div><div class="l">Assessments Completed</div></div>
+          <div class="stat-box"><div class="n">98%</div><div class="l">Client Satisfaction</div></div>
+          <div class="stat-box"><div class="n">50+</div><div class="l">Expert Consultants</div></div>
+          <div class="stat-box"><div class="n">12+</div><div class="l">Years Experience</div></div>
+        </div>
+        <div class="cert-badges">
+          <span class="cert-badge">ISO 27001 Certified</span>
+          <span class="cert-badge">CISA Advisors</span>
+          <span class="cert-badge">CISSP Team</span>
+          <span class="cert-badge">AWS Partner</span>
+          <span class="cert-badge">Microsoft Partner</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Mithra Consulting team at work">
+          <div class="iso-badge">
+            <div class="icon">✅</div>
+            <div>
+              <strong>ISO 27001 Certified</strong>
+              <span>Audit-Ready Practice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="container">
+    <div class="trust-band-label">Compliance Frameworks We Cover</div>
+    <div class="trust-pills">
+      <span class="trust-pill">ISO 27001</span>
+      <span class="trust-pill">ISO 42001</span>
+      <span class="trust-pill">SOC 2 Type I &amp; II</span>
+      <span class="trust-pill">HIPAA</span>
+      <span class="trust-pill">PCI-DSS v4.0</span>
+      <span class="trust-pill">GDPR</span>
+      <span class="trust-pill">DPDPA 2023</span>
+      <span class="trust-pill">NIST CSF</span>
+      <span class="trust-pill">CIS Controls</span>
+      <span class="trust-pill">MITRE ATT&amp;CK</span>
+      <span class="trust-pill">OWASP Top 10</span>
+      <span class="trust-pill">MASVS</span>
+      <span class="trust-pill">CVSS v3.1</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div style="text-align:center;max-width:620px;margin:0 auto 0">
+      <span class="section-label reveal">What We Do</span>
+      <h2 class="section-h2 reveal reveal-delay-1">Comprehensive <em>Security Services</em></h2>
+      <p class="section-lead reveal reveal-delay-2" style="margin:0 auto">End-to-end cybersecurity solutions crafted for modern enterprise challenges — from compliance to cloud, from detection to response.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">🔍</div>
+        <h3>Audit &amp; Compliance</h3>
+        <p>Navigate ISO 27001, SOC 2, HIPAA, PCI-DSS, GDPR, and DPDPA with confidence. Expert gap analysis, readiness assessments, and certification support.</p>
+        <a href="services/audit.html" class="svc-link">Explore Service →</a>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon">🛡️</div>
+        <h3>VAPT</h3>
+        <p>Rigorous vulnerability assessment and penetration testing for web apps, networks, mobile (Android &amp; iOS), and AI/ML systems. Manual-led, CVSS-scored.</p>
+        <a href="services/vapt.html" class="svc-link">Explore Service →</a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon">☁️</div>
+        <h3>Cloud Services</h3>
+        <p>Multi-cloud security posture management, disaster recovery architecture, and enterprise backup strategies across AWS, Azure, and GCP.</p>
+        <a href="services/cloud.html" class="svc-link">Explore Service →</a>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon">📡</div>
+        <h3>SOC Monitoring</h3>
+        <p>24×7 threat detection and response powered by SIEM, threat intelligence, and MITRE ATT&amp;CK-aligned detection. Proactive threat hunting included.</p>
+        <a href="services/soc.html" class="svc-link">Explore Service →</a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon">💻</div>
+        <h3>IT Solutions</h3>
+        <p>Enterprise endpoint security with EDR/XDR deployment and hardened email security including DMARC, BEC protection, and sandbox analysis.</p>
+        <a href="services/it.html" class="svc-link">Explore Service →</a>
+      </div>
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-icon">⚙️</div>
+        <h3>Managed Services</h3>
+        <p>Fully managed security operations for Microsoft Azure, Amazon AWS, and Google Cloud Platform — continuous monitoring, compliance, and optimisation.</p>
+        <a href="services/managed.html" class="svc-link">Explore Service →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <span class="section-label reveal">Why Mithra</span>
+      <h2 class="section-h2 reveal reveal-delay-1">Built for <em>Trust</em> at Every Level</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>Deep Domain Expertise</h3>
+        <p>Our consultants hold CISSP, CISA, CEH, AWS Security, and other leading certifications — bringing practitioner-grade knowledge to every engagement.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🔬</div>
+        <h3>Evidence-Based Approach</h3>
+        <p>Every finding is backed by documented evidence, CVSS scoring, and actionable remediation guidance — not generic recommendations.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🤝</div>
+        <h3>Long-Term Partnership</h3>
+        <p>We measure success by your security posture improvement over time, not one-off deliverables. 98% of clients engage us year after year.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">⚡</div>
+        <h3>Rapid Time-to-Value</h3>
+        <p>Structured delivery methodology means quick onboarding, clear milestones, and results you can act on — not reports that gather dust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Ready to Strengthen Your Security Posture?</h2>
+    <p class="reveal reveal-delay-1">Let's discuss your needs. No obligation — just an honest conversation about where you are and where you need to be.</p>
+    <a href="contact.html" class="btn btn-white reveal reveal-delay-2">Schedule a Free Consultation →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-pill"><img src="../images/Mithra-consulting.png" alt="Mithra Consulting"></div>
+        <p>Trusted cybersecurity and compliance partner for businesses navigating an increasingly complex digital landscape.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/audit.html">Audit &amp; Compliance</a></li>
+          <li><a href="services/vapt.html">VAPT</a></li>
+          <li><a href="services/cloud.html">Cloud Services</a></li>
+          <li><a href="services/soc.html">SOC Monitoring</a></li>
+          <li><a href="services/it.html">IT Solutions</a></li>
+          <li><a href="services/managed.html">Managed Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="services/audit.html">ISO 27001</a></li>
+          <li><a href="services/audit.html">SOC 2</a></li>
+          <li><a href="services/audit.html">PCI-DSS</a></li>
+          <li><a href="services/audit.html">GDPR</a></li>
+          <li><a href="services/audit.html">DPDPA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mithra Consulting. All rights reserved.</p>
+      <span class="mono">SECURING DIGITAL FUTURES</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll nav shadow
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
