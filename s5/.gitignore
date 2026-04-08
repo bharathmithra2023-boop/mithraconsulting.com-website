@@ -1,0 +1,13 @@
+# Deployment & utility scripts
+wp_*.py
+read_front_page.py
+fetch_style.py
+upload_track_record.py
+generate_theme.py
+
+# Temp / build artefacts
+__pycache__/
+*.pyc
+
+# Claude internal
+.claude/
