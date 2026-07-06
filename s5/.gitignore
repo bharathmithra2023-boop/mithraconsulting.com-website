@@ -1,13 +1,41 @@
-# Deployment & utility scripts
+# Deployment scripts contain hardcoded server credentials — never commit
 wp_*.py
 read_front_page.py
 fetch_style.py
 upload_track_record.py
 generate_theme.py
 
-# Temp / build artefacts
+add_cloud_partners.py
+audit_images.py
+check_*.py
+debug_*.py
+deploy_*.py
+download_*.py
+fetch_*.py
+final_deploy.py
+fix_*.py
+flush_cache.py
+pull_theme.py
+reset_admin.py
+rewrite_who_mission.py
+set_logo_img.py
+swap_cloud_card_logos.py
+upload_*.py
+verify_*.py
+
+# WordPress theme intermediate snapshots
+static_services/
+
+# Python / OS artefacts
 __pycache__/
 *.pyc
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
 
 # Claude internal
 .claude/

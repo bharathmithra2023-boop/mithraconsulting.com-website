@@ -121,7 +121,7 @@ get_header(); ?>
 
       <div class="svc-detail-card reveal reveal-delay-1">
         <div class="svc-detail-icon">&#129302;</div>
-        <h3>AI &amp; ML System VAPT</h3>
+        <h3>AI VAPT</h3>
         <ul class="svc-list">
           <li>Adversarial ML attack generation</li>
           <li>Model inversion &amp; extraction attacks</li>
@@ -132,6 +132,7 @@ get_header(); ?>
           <li>Training data leakage assessment</li>
           <li>LLM supply chain risk analysis</li>
         </ul>
+        <p class="svc-card-note">Need broader AI governance, compliance, or architecture review? See our dedicated <a href="<?php echo esc_url(home_url('/services/ai-security/')); ?>">AI Security service &rarr;</a></p>
       </div>
 
     </div>
