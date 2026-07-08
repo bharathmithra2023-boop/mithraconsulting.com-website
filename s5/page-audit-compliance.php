@@ -19,7 +19,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/blog-3.jpg')); ?>" alt="Audit and Compliance Advisory" loading="eager">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/audit.jpg')); ?>" alt="Audit and Compliance Advisory" loading="eager">
     </div>
   </div>
 </section>
@@ -177,7 +177,7 @@ get_header(); ?>
     </div>
     <div class="why-grid">
       <div class="why-card reveal"><div class="why-icon">&#9889;</div><h3>Accelerated Certification</h3><p>Structured methodology and pre-built documentation templates reduce time to certification by up to 40%.</p></div>
-      <div class="why-card reveal reveal-delay-1"><div class="why-icon">&#128握;</div><h3>Win Enterprise Contracts</h3><p>Demonstrate compliance maturity to unlock enterprise customers who mandate ISO 27001 or SOC 2.</p></div>
+      <div class="why-card reveal reveal-delay-1"><div class="why-icon">&#128188;</div><h3>Win Enterprise Contracts</h3><p>Demonstrate compliance maturity to unlock enterprise customers who mandate ISO 27001 or SOC 2.</p></div>
       <div class="why-card reveal reveal-delay-2"><div class="why-icon">&#128737;</div><h3>Reduce Breach Risk</h3><p>Compliance programmes surface control gaps before attackers exploit them, measurably reducing risk exposure.</p></div>
       <div class="why-card reveal"><div class="why-icon">&#128279;</div><h3>Unified Multi-Framework</h3><p>Overlapping control sets across ISO 27001, SOC 2, and GDPR managed as a single integrated programme.</p></div>
       <div class="why-card reveal reveal-delay-1"><div class="why-icon">&#127942;</div><h3>Regulatory Confidence</h3><p>Board-ready reporting and auditor-tested evidence packs give leadership confidence ahead of any inspection.</p></div>
@@ -199,6 +199,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+<?php mithra_related_services(); ?>
 
 <!-- CTA -->
 <section class="cta-section">

@@ -18,7 +18,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/blog-5.jpg')); ?>" alt="AI Security Assessment" loading="eager">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/ai-security.jpg')); ?>" alt="AI Security Assessment" loading="eager">
     </div>
   </div>
 </section>
@@ -38,7 +38,7 @@ get_header(); ?>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="svc-stat-box">
-          <div class="svc-big-num">40+</div>
+          <div class="svc-big-num">10+</div>
           <div class="svc-big-lbl">AI Systems Assessed</div>
           <div class="svc-stat-badges">
             <span class="cert-badge">OWASP LLM Top 10</span>
@@ -181,6 +181,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+<?php mithra_related_services(); ?>
 
 <!-- CTA -->
 <section class="cta-section">

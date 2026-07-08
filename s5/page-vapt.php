@@ -18,7 +18,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/blog-4.jpg')); ?>" alt="Penetration Testing" loading="eager">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/vapt.jpg')); ?>" alt="Penetration Testing" loading="eager">
     </div>
   </div>
 </section>
@@ -190,6 +190,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+<?php mithra_related_services(); ?>
 
 <!-- CTA -->
 <section class="cta-section">

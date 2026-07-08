@@ -39,3 +39,6 @@ Thumbs.db
 
 # Claude internal
 .claude/
+
+# nginx config contains internal network topology — keep out of public repo
+nginx-reverse-proxy.conf

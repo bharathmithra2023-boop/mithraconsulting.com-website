@@ -18,7 +18,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/blog-6.jpg')); ?>" alt="Managed Cloud Security Services" loading="eager">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/managed.jpg')); ?>" alt="Managed Cloud Security Services" loading="eager">
     </div>
   </div>
 </section>
@@ -161,11 +161,13 @@ get_header(); ?>
       <span class="trust-pill">CIS Azure Benchmark</span><span class="trust-pill">AWS Well-Architected</span>
       <span class="trust-pill">GCP Security Foundations</span><span class="trust-pill">ISO 27017</span>
       <span class="trust-pill">SOC 2</span><span class="trust-pill">NIST CSF</span>
-      <span class="trust-pill">Zero Trust</span><span class="trust-pill">PCI-DSS v4.0</span>
+      <span class="trust-pill">Zero Trust</span><span class="trust-pill">ISO 42001</span>
       <span class="trust-pill">GDPR</span>
     </div>
   </div>
 </div>
+
+<?php mithra_related_services(); ?>
 
 <!-- CTA -->
 <section class="cta-section">

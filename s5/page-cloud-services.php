@@ -18,7 +18,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/blog-5.jpg')); ?>" alt="Cloud Security Services" loading="eager">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/cloud.jpg')); ?>" alt="Cloud Security Services" loading="eager">
     </div>
   </div>
 </section>
@@ -160,6 +160,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+<?php mithra_related_services(); ?>
 
 <!-- CTA -->
 <section class="cta-section">
