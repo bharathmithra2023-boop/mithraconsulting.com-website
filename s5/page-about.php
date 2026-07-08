@@ -19,7 +19,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="svc-hero-img">
-      <img src="<?php echo esc_url( content_url( 'uploads/mithra/about.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Mithra Consulting team at work', 'mithra' ); ?>" loading="eager">
+      <img src="<?php echo esc_url( content_url( 'uploads/mithra/about-hero.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Mithra Consulting team at work', 'mithra' ); ?>" loading="eager">
     </div>
   </div>
 </section>
