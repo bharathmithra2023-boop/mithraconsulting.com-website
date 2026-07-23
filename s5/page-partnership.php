@@ -149,15 +149,26 @@ get_header(); ?>
   <div class="container">
     <div class="partners-label"><?php esc_html_e( 'Networking Partners', 'mithra' ); ?></div>
     <a class="net-headline" href="#" title="Avion Network" aria-label="Avion Network">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/partner-avion.png')); ?>" alt="Avion Network" loading="lazy">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/partner-avion-v2.png')); ?>" alt="Avion Network" loading="lazy">
     </a>
     <div class="net-partner-sub"><?php esc_html_e( 'In partnership with leading networking vendors', 'mithra' ); ?></div>
-    <div class="partners-grid net-grid">
-      <div class="partner-tile" title="Ruckus Networks"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-ruckus.png')); ?>" alt="Ruckus Networks" loading="lazy"></div>
-      <div class="partner-tile" title="D-Link"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-dlink.png')); ?>" alt="D-Link" loading="lazy"></div>
-      <div class="partner-tile" title="Aruba (HPE)"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-aruba.png')); ?>" alt="Aruba, a Hewlett Packard Enterprise company" loading="lazy"></div>
-      <div class="partner-tile" title="Hewlett Packard Enterprise"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-hpe.png')); ?>" alt="Hewlett Packard Enterprise" loading="lazy"></div>
-      <div class="partner-tile" title="Cisco"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-cisco.png')); ?>" alt="Cisco" loading="lazy"></div>
+    <div class="net-marquee" aria-label="Networking vendor logos">
+      <div class="net-track">
+        <?php
+        $mithra_net_logos = array(
+          'partner-ruckus.png' => 'Ruckus Networks',
+          'partner-dlink.png'  => 'D-Link',
+          'partner-aruba.png'  => 'Aruba, a Hewlett Packard Enterprise company',
+          'partner-hpe.png'    => 'Hewlett Packard Enterprise',
+          'partner-cisco.png'  => 'Cisco',
+        );
+        for ( $mithra_rep = 0; $mithra_rep < 3; $mithra_rep++ ) {
+          foreach ( $mithra_net_logos as $mithra_file => $mithra_name ) {
+            echo '<div class="partner-tile"><img src="' . esc_url( content_url( 'uploads/mithra/' . $mithra_file ) ) . '" alt="' . esc_attr( $mithra_name ) . '" loading="lazy"></div>';
+          }
+        }
+        ?>
+      </div>
     </div>
   </div>
 </div>
