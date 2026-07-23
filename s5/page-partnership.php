@@ -149,7 +149,7 @@ get_header(); ?>
   <div class="container">
     <div class="partners-label"><?php esc_html_e( 'Networking Partners', 'mithra' ); ?></div>
     <a class="net-headline" href="#" title="Avion Network" aria-label="Avion Network">
-      <img src="<?php echo esc_url(content_url('uploads/mithra/partner-avion-v2.png')); ?>" alt="Avion Network" loading="lazy">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/partner-avion-v3.png')); ?>" alt="Avion Network" loading="lazy">
     </a>
     <div class="net-partner-sub"><?php esc_html_e( 'In partnership with leading networking vendors', 'mithra' ); ?></div>
     <div class="net-marquee" aria-label="Networking vendor logos">
