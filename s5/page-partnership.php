@@ -143,6 +143,25 @@ get_header(); ?>
   </div>
 </section>
 
+
+<!-- NETWORKING PARTNERS -->
+<div class="partners-band net-partners">
+  <div class="container">
+    <div class="partners-label"><?php esc_html_e( 'Networking Partners', 'mithra' ); ?></div>
+    <a class="net-headline" href="#" title="Avion Network" aria-label="Avion Network">
+      <img src="<?php echo esc_url(content_url('uploads/mithra/partner-avion.png')); ?>" alt="Avion Network" loading="lazy">
+    </a>
+    <div class="net-partner-sub"><?php esc_html_e( 'In partnership with leading networking vendors', 'mithra' ); ?></div>
+    <div class="partners-grid net-grid">
+      <div class="partner-tile" title="Ruckus Networks"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-ruckus.png')); ?>" alt="Ruckus Networks" loading="lazy"></div>
+      <div class="partner-tile" title="D-Link"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-dlink.png')); ?>" alt="D-Link" loading="lazy"></div>
+      <div class="partner-tile" title="Aruba (HPE)"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-aruba.png')); ?>" alt="Aruba, a Hewlett Packard Enterprise company" loading="lazy"></div>
+      <div class="partner-tile" title="Hewlett Packard Enterprise"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-hpe.png')); ?>" alt="Hewlett Packard Enterprise" loading="lazy"></div>
+      <div class="partner-tile" title="Cisco"><img src="<?php echo esc_url(content_url('uploads/mithra/partner-cisco.png')); ?>" alt="Cisco" loading="lazy"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ENQUIRY FORM -->
 <section class="section" id="partnership-form">
   <div class="container">
