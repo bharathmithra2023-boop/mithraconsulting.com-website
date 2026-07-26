@@ -144,6 +144,32 @@ get_header(); ?>
 </section>
 
 
+<!-- TECHNOLOGY PARTNERS -->
+<div class="partners-band">
+  <div class="container">
+    <div class="partners-label"><?php esc_html_e( 'Our Technology Partners', 'mithra' ); ?></div>
+    <div class="net-marquee" aria-label="Technology partner logos">
+      <div class="net-track">
+        <?php
+        $mithra_tech_logos = array(
+          'partner-aws.png'          => 'AWS Partner Network',
+          'partner-azure.png'        => 'Microsoft Azure',
+          'partner-dell.png'         => 'Dell Certified Partner',
+          'partner-ingram.png'       => 'Ingram Micro',
+          'partner-redington.avif'   => 'Redington',
+          'partner-scalefusion.png'  => 'Scalefusion',
+        );
+        for ( $mithra_trep = 0; $mithra_trep < 3; $mithra_trep++ ) {
+          foreach ( $mithra_tech_logos as $mithra_tfile => $mithra_tname ) {
+            echo '<div class="partner-tile"><img src="' . esc_url( content_url( 'uploads/mithra/' . $mithra_tfile ) ) . '" alt="' . esc_attr( $mithra_tname ) . '" loading="lazy"></div>';
+          }
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- NETWORKING PARTNERS -->
 <div class="partners-band net-partners">
   <div class="container">
