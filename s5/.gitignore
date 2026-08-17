@@ -42,3 +42,7 @@ Thumbs.db
 
 # nginx config contains internal network topology — keep out of public repo
 nginx-reverse-proxy.conf
+
+# Operational scripts: contain internal IPs, admin username and hardening
+# posture. This repo is public - these must never be pushed.
+ops/
