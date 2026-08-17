@@ -941,3 +941,13 @@ input[type="text"],input[type="email"],input[type="password"],input[type="search
 .embed-consent-map{min-height:320px;padding:24px 20px}
 .embed-consent-map .embed-consent-body{max-width:380px}
 .embed-consent-map .embed-consent-icon{font-size:1.9rem;margin-bottom:10px}
+
+
+/* ===== Dropdown overflow fix (added 2026-08-17) =====
+   The panel is 520px wide, absolutely positioned and was centred on its
+   trigger (left:50% + translateX(-50%)). The Services trigger sits near the
+   right of the nav, so the panel extended past the viewport and every page
+   scrolled horizontally by ~20-35px. Anchoring it to the trigger's right edge
+   makes it open leftwards, which keeps it on screen at any width. */
+.dropdown-panel{left:auto;right:0;transform:translateY(-4px);max-width:calc(100vw - 32px)}
+.nav-dropdown:hover .dropdown-panel{transform:translateY(0)}
