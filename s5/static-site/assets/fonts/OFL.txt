@@ -1,0 +1,10 @@
+Fraunces, Inter and DM Mono are licensed under the SIL Open Font License,
+Version 1.1. The full licence text is available at:
+  https://openfontlicense.org/
+
+Fraunces  - Copyright (c) The Fraunces Project Authors
+Inter     - Copyright (c) The Inter Project Authors
+DM Mono   - Copyright (c) The DM Mono Project Authors
+
+The OFL permits redistribution and self-hosting, which is what this
+directory does.
