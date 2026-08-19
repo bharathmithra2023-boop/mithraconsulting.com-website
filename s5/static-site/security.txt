@@ -1,0 +1,14 @@
+# Legacy-path copy - the canonical file is /.well-known/security.txt
+# security.txt for Mithra Consulting - https://www.mithraconsulting.com/
+# Format: RFC 9116 (https://www.rfc-editor.org/rfc/rfc9116)
+#
+# We are a cybersecurity advisory firm. If you have found a vulnerability
+# in this website, please tell us before telling anyone else - see the
+# Policy link below for what we ask and what we offer in return.
+
+Contact: mailto:sales@mithraconsulting.com
+Contact: tel:+91-98807-81801
+Expires: 2027-08-19T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.mithraconsulting.com/.well-known/security.txt
+Policy: https://www.mithraconsulting.com/terms/#responsible-disclosure
