@@ -246,54 +246,66 @@
                     <h2>Send Us a Message</h2>
           <p class="sub">Tell us about your needs and we&rsquo;ll connect you with the right expert.</p>
 
-                        <form method="post" action="mailto:sales@mithraconsulting.com" data-mailto data-subject="Website Contact Enquiry" novalidate>
-                
-                <input type="hidden" id="mithra_nonce" name="mithra_nonce" value="914f7481a8" />                <div class="form-fields">
-                <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-                  <p>
-                    <label>First Name *</label>
-                    <input type="text" name="first_name" placeholder="John" required>
-                  </p>
-                  <p>
-                    <label>Last Name *</label>
-                    <input type="text" name="last_name" placeholder="Smith" required>
-                  </p>
+                        <form method="post" action="mailto:sales@mithraconsulting.com" data-mailto data-subject="Website Contact Enquiry" class="contact-form" novalidate>
+
+                <input type="hidden" id="mithra_nonce" name="mithra_nonce" value="914f7481a8" />
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cf-first-name">First Name <span class="req">*</span></label>
+                    <input type="text" id="cf-first-name" name="first_name" placeholder="John" required autocomplete="given-name">
+                  </div>
+                  <div class="form-field">
+                    <label for="cf-last-name">Last Name <span class="req">*</span></label>
+                    <input type="text" id="cf-last-name" name="last_name" placeholder="Smith" required autocomplete="family-name">
+                  </div>
                 </div>
-                <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-                  <p>
-                    <label>Work Email *</label>
-                    <input type="email" name="email" placeholder="john@company.com" required>
-                  </p>
-                  <p>
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" placeholder="+91 98807 81801">
-                  </p>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cf-email">Work Email <span class="req">*</span></label>
+                    <input type="email" id="cf-email" name="email" placeholder="john@company.com" required autocomplete="email">
+                  </div>
+                  <div class="form-field">
+                    <label for="cf-phone">Phone Number</label>
+                    <input type="tel" id="cf-phone" name="phone" placeholder="+91 98807 81801" autocomplete="tel">
+                  </div>
                 </div>
-                <p>
-                  <label>Company Name *</label>
-                  <input type="text" name="company" placeholder="Acme Corp" required>
-                </p>
-                <p>
-                  <label>Service of Interest</label>
-                  <select name="service">
-                    <option value="">Select a service</option>
-                    <option value="audit">Audit &amp; Compliance</option>
-                    <option value="vapt">VAPT</option>
-                    <option value="cloud">Cloud Services</option>
-                    <option value="soc">SOC Monitoring</option>
-                    <option value="it">IT Solutions</option>
-                    <option value="managed">Managed Services</option>
-                    <option value="other">Other</option>
-                  </select>
-                </p>
-                <p>
-                  <label>Message *</label>
-                  <textarea name="message" placeholder="Tell us about your security challenges or requirements..." required></textarea>
-                </p>
-                <p>
-                  <input type="submit" value="Send Message â">
-                </p>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="cf-company">Company Name <span class="req">*</span></label>
+                    <input type="text" id="cf-company" name="company" placeholder="Acme Corp" required autocomplete="organization">
+                  </div>
+                  <div class="form-field">
+                    <label for="cf-service">Service of Interest</label>
+                    <select id="cf-service" name="service">
+                      <option value="">Select a service</option>
+                      <option value="audit">Audit &amp; Compliance</option>
+                      <option value="vapt">VAPT</option>
+                      <option value="cloud">Cloud Services</option>
+                      <option value="soc">SOC Monitoring</option>
+                      <option value="it">IT Solutions</option>
+                      <option value="managed">Managed Services</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
                 </div>
+
+                <div class="form-field form-field-full">
+                  <label for="cf-message">Message <span class="req">*</span></label>
+                  <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your security challenges or requirements..." required></textarea>
+                </div>
+
+                <!-- Honeypot -->
+                <div style="position:absolute;left:-9999px" aria-hidden="true">
+                  <label>Do not fill this in <input type="text" name="hp_field" tabindex="-1" autocomplete="off"></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Send Message &rarr;
+                </button>
+                <p class="form-privacy">By submitting, you agree to Mithra Consulting contacting you about your enquiry. We will never share your details.</p>
               </form>
 
         </div><!-- .form-card -->
