@@ -19,15 +19,15 @@
 <meta name="twitter:description" content="Partner with Mithra Consulting as a referral, reseller, technology alliance or distribution partner. Enterprise cybersecurity and compliance for your clients.">
 <meta name="twitter:image" content="https://www.mithraconsulting.com/assets/img/partnership.jpg">
 <link rel="canonical" href="https://www.mithraconsulting.com/partnership/">
-<link rel="preload" as="style" href="/assets/css/style.css?v=20260817c">
+<link rel="preload" as="style" href="/assets/css/style.css?v=20260819">
 
 	<title>Partnership With Us — Reseller &amp; Referral | Mithra</title>
 	<meta property="og:locale" content="en_US" />
 	<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.mithraconsulting.com/partnership/","url":"https://www.mithraconsulting.com/partnership/","name":"Partnership With Us - Mithra Consulting","isPartOf":{"@id":"https://www.mithraconsulting.com/#website"},"datePublished":"2026-07-06T07:58:56+00:00","breadcrumb":{"@id":"https://www.mithraconsulting.com/partnership/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.mithraconsulting.com/partnership/"]}]},{"@type":"BreadcrumbList","@id":"https://www.mithraconsulting.com/partnership/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mithraconsulting.com/"},{"@type":"ListItem","position":2,"name":"Partnership With Us"}]},{"@type":"WebSite","@id":"https://www.mithraconsulting.com/#website","url":"https://www.mithraconsulting.com/","name":"Mithra Consulting","description":"","publisher":{"@id":"https://www.mithraconsulting.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.mithraconsulting.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.mithraconsulting.com/#organization","name":"Mithra Consulting","url":"https://www.mithraconsulting.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.mithraconsulting.com/#/schema/logo/image/","url":"https://www.mithraconsulting.com/assets/img/logo.png","contentUrl":"https://www.mithraconsulting.com/assets/img/logo.png","width":300,"height":100,"caption":"Mithra Consulting"},"image":{"@id":"https://www.mithraconsulting.com/#/schema/logo/image/"}},{"@type":"ProfessionalService","@id":"https://www.mithraconsulting.com/#localbusiness","name":"Mithra Consulting","url":"https://www.mithraconsulting.com/","image":"https://www.mithraconsulting.com/assets/img/logo.png","logo":"https://www.mithraconsulting.com/assets/img/logo.png","email":"sales@mithraconsulting.com","telephone":"+91-98807-81801","description":"Specialist cybersecurity advisory firm in Chennai delivering VAPT, ISO 27001 and SOC 2 compliance, 24x7 SOC monitoring, AI security and managed cloud services.","address":{"@type":"PostalAddress","streetAddress":"Phase 1, Vikram Sarabhai Instronics Estate, Tharamani, Thiruvanmiyur","addressLocality":"Chennai","addressRegion":"Tamil Nadu","postalCode":"600041","addressCountry":"IN"},"areaServed":[{"@type":"City","name":"Chennai"},{"@type":"State","name":"Tamil Nadu"},{"@type":"Country","name":"India"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"}],"hasMap":"https://www.google.com/maps/search/?api=1&query=X7J2%2BCHM+Chennai","parentOrganization":{"@id":"https://www.mithraconsulting.com/#organization"},"sameAs":["https://www.linkedin.com/in/sbharath1012/","https://www.g2.com/products/mithra-consulting/reviews"]}]}</script>
 
 
-<link rel='stylesheet' id='mithra-fonts-css' href='/assets/css/fonts.css?v=20260817c' media='all' />
-<link rel='stylesheet' id='mithra-style-css' href='/assets/css/style.css?v=20260817c' media='all' />
+<link rel='stylesheet' id='mithra-fonts-css' href='/assets/css/fonts.css?v=20260819' media='all' />
+<link rel='stylesheet' id='mithra-style-css' href='/assets/css/style.css?v=20260819' media='all' />
 <link rel="icon" href="/assets/img/mithra-favicon.png" sizes="32x32" />
 <link rel="icon" href="/assets/img/mithra-favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/assets/img/mithra-favicon.png" />
@@ -344,6 +344,7 @@
           Submit Partnership Enquiry &rarr;
         </button>
         <p class="form-privacy">By submitting, you agree to Mithra Consulting contacting you about partnership opportunities. We will never share your details.</p>
+                <p class="form-notice" hidden>Please take a moment to review your details, then submit again.</p>
       </form>
 
     </div>
@@ -424,14 +425,30 @@
 </footer>
 
 
-<script id="mithra-main-js" defer src="/assets/js/main.js?v=20260817c"></script>
+<script id="mithra-main-js" defer src="/assets/js/main.js?v=20260819"></script>
 
 <script>
 /* Static contact/partnership forms -> compose a mail to sales@mithraconsulting.com.
    No server-side code runs on this site by design. */
 document.querySelectorAll('form[data-mailto]').forEach(function(f){
+  /* Anti-spam: honeypot field (existing) plus a minimum-fill-time check.
+     Both forms submit via mailto:, so there is no server to verify a
+     CAPTCHA response token against - a widget here would be decorative.
+     This timing check adds real deterrence against scripted instant
+     submissions without any third-party script or account. Added 2026-08-19,
+     alongside a fix for the previous version of this script, which had raw
+     newline bytes inside string literals and never parsed at all. */
+  var _mithraFormsReadyAt=Date.now();
+  var MITHRA_MIN_FILL_MS=2500;
   f.addEventListener('submit', function(e){
     e.preventDefault();
+    var hp=f.querySelector('[name=hp_field]'); if(hp&&hp.value){return;}
+    var notice=f.querySelector('.form-notice');
+    if(Date.now()-_mithraFormsReadyAt<MITHRA_MIN_FILL_MS){
+      if(notice){notice.hidden=false;}
+      return;
+    }
+    if(notice){notice.hidden=true;}
     var d=f.querySelectorAll('input[name],select[name],textarea[name]'), lines=[], subj=f.dataset.subject||'Website enquiry';
     d.forEach(function(el){
       if(el.type==='hidden'||el.type==='submit'||!el.name) return;
@@ -440,12 +457,7 @@ document.querySelectorAll('form[data-mailto]').forEach(function(f){
       lab=lab.charAt(0).toUpperCase()+lab.slice(1);
       lines.push(lab+': '+(el.value||'-'));
     });
-    var hp=f.querySelector('[name=hp_field]'); if(hp&&hp.value){return;}
-    var body=encodeURIComponent(lines.join('
-')+'
-
---
-Sent from mithraconsulting.com');
+    var body=encodeURIComponent(lines.join('\n')+'\n\n--\nSent from mithraconsulting.com');
     window.location.href='mailto:sales@mithraconsulting.com?subject='+encodeURIComponent(subj)+'&body='+body;
     var n=f.querySelector('.form-sent');
     if(n){n.hidden=false;}
